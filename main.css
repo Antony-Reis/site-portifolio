@@ -9,6 +9,12 @@ html {
     height: 100%;
 }
 
+a {
+    text-decoration: none;
+    color: #b9b9b9;
+
+}
+
 body {
     min-height: 100%;
     width: 100%;
@@ -28,7 +34,11 @@ body {
     font-family: 'Courier New', Courier, monospace;
     font-size: 115%;
     margin-top: 45px;
-    text-decoration: none;
+
+}
+
+.link:hover{
+    color: #fafafa;
 }
 
 #cabecalho {
@@ -40,15 +50,47 @@ body {
 #logo {
     width: 80px;
     object-fit: contain;
-    margin-right: 66%;
+    margin-right: 50%;
+    margin-left: 90px;
 }
 
 #botao-home {
     color: #fafafa;
-    margin-right: 40px;
+    margin-right: 30px;
 }
+
 
 #botao-certificados {
     color: #777777;
+    margin-right: 90px;
+}
 
+#botao-certificados:hover{
+    color: #fafafa;
+}
+
+#text {
+    font-family: monospace;
+    margin-top: 250px;
+    margin-left: 25%;
+    margin-right: 30%;
+}
+
+#text-title {
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+
+#text-string {
+    font-size: 30px;
+}
+
+#link-redes {
+    margin-left: 25%;
+    margin-top: 10px;
+    img {
+        margin-right: 15px;
+        width: 25px;
+        height: 25px;
+    }
 }
