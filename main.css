@@ -20,6 +20,8 @@ body {
     width: 100%;
     background-color: #111111;
     color: #fafafa;
+    animation: fadein 1.5s;
+
 
 }
 
@@ -97,13 +99,17 @@ body {
 }
 
 #botao-curriculo {
+    background-color: #fafafa;
     color: #777777;
+    border-color: #fafafa;
     font-family: monospace;
-    border-radius: 10px;
     margin-left: 40%;
+    border-radius: 10px;
+    width: 120px;
+    height: 25px;
+
 }
 
 #botao-curriculo:hover {
-    color: #fafafa;
+    color: #111111;
 }
-
