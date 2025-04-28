@@ -12,7 +12,7 @@ html {
 a {
     text-decoration: none;
     color: #777777;
-
+    transition-duration: 0.25s;
 }
 
 body {
@@ -52,7 +52,7 @@ body {
 #logo {
     width: 80px;
     object-fit: contain;
-    margin-right: 50%;
+    margin-right: 48%;
     margin-left: 90px;
 }
 
@@ -61,14 +61,31 @@ body {
     margin-right: 30px;
 }
 
+#botao-home2 {
+    color: #777777;
+    margin-right: 30px;
+}
 
-#botao-certificados {
+
+
+#botao-portifolio {
     color: #777777;
     margin-right: 90px;
 }
 
-#botao-certificados:hover {
+#botao-portifolio2 {
     color: #fafafa;
+    margin-right: 90px;
+}
+
+#botao-portifolio:hover {
+    color: #fafafa;
+    transition-duration: 0.25s;
+}
+
+#botao-home2:hover {
+    color: #fafafa;
+    transition-duration: 0.25s;
 }
 
 #text {
@@ -76,6 +93,8 @@ body {
     margin-top: 250px;
     margin-left: 25%;
     margin-right: 33%;
+    border-right: 1px solid #b0a6bd;
+    border-bottom: 1px solid #b0a6bd;
 }
 
 #text-title {
@@ -99,17 +118,22 @@ body {
 }
 
 #botao-curriculo {
+    display: inline-block;
     background-color: #fafafa;
-    color: #777777;
-    border-color: #fafafa;
+    color: #111111;
     font-family: monospace;
-    margin-left: 40%;
-    border-radius: 10px;
+    margin-left: 35.4%;
+    border-radius: 5px;
     width: 120px;
     height: 25px;
+    line-height: 25px;
+    text-align: center;
+    
 
 }
 
 #botao-curriculo:hover {
-    color: #111111;
+    transition-duration: 0.25s;
+    color: #fafafa;
+    background-color: #111111;
 }
