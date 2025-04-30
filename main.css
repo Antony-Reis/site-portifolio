@@ -11,13 +11,16 @@ html {
 
 a {
     text-decoration: none;
-    color: #b0a6bd;
-    transition-duration: 0.25s;
+    background: linear-gradient(to right,
+            #b0a6bd,
+            #704ba0);
+    background-clip: text;
+    color: transparent;
 }
 
 body {
-    min-height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     background-color: #111111;
     color: #fafafa;
     animation: fadein 1.75s;
@@ -28,21 +31,32 @@ body {
 .botao-cabecalho {
     background-color: transparent;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 115%;
+    font-size: 1.2rem;
 
 }
 
 a:hover {
-    color: #704ba0;
+    background: linear-gradient(to left,
+            #b0a6bd,
+            #704ba0);
+    background-clip: text;
+    color: transparent;
+
+
 }
 
+
 .portifolio-cards {
+    animation: pulse 3s initial;
     display: flex;
     flex-direction: column;
-    width: 350px;
-    height: 350px;
-    border-radius: 50px;
-    font-size: 15px;
+    width: 22.5rem;
+    height: 22.5rem;
+    border-radius: 75px;
+    border: solid 2px #704ba0;
+    border-top: solid 1px #704ba0;
+    border-left: solid 1px #704ba0;
+    font-size: 1rem;
     background-color: #202020;
     align-items: center;
     justify-content: space-around;
@@ -57,21 +71,20 @@ a:hover {
 }
 
 .portifolio-cards:hover {
-    box-shadow: 0px 0px 5px 0px #fafafa;
+    position: relative;
+    bottom: 1vh;
+    border: #b0a6bd solid 2px;
     opacity: 100%;
-    transition-duration: 0.25s;
     cursor: pointer;
-
 }
 
 .img-cards {
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 15rem;
+    max-height: 15rem;
     width: auto;
     height: auto;
     margin: auto 0;
     border-radius: 42.5px;
-    border: #111111 solid 5px;
 
 }
 
@@ -82,9 +95,8 @@ a:hover {
     left: 25%;
     width: 50%;
     height: 80%;
-    background: #202020;
+    background: #191919;
     box-shadow: 0 0 2px 1px #b0a6bd;
-    ;
     border-radius: 50px;
     display: none;
     flex-direction: column;
@@ -97,18 +109,16 @@ a:hover {
 
 .close {
     position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 24px;
-    font-weight: bold;
+    top: 0.625rem;
+    right: 1.25rem;
+    font-size: 3rem;
     cursor: pointer;
 
 
 }
 
 .close:hover {
-    border-radius: 100%;
-    box-shadow: 0 0 5px 0px #fafafa;
+    color: #b0a6bd;
 }
 
 
@@ -118,33 +128,31 @@ a:hover {
     align-items: center;
     margin: 0 auto;
     width: 50%;
-    height: 110px;
+    height: 6.875rem;
 }
 
 #logo {
-    width: 80px;
-    height: 80px;
+    width: 5rem;
+    height: 5rem;
     object-fit: contain;
 }
 
 #botao-home {
-    margin-left: 55%;
+    margin-left: 30vw;
     color: #fafafa;
 }
 
 #botao-home2 {
-    margin-left: 55%;
+    margin-left: 30vw;
     color: #777777;
 }
 
 
 #botao-portifolio {
-    margin-right: 5%;
     color: #777777;
 }
 
 #botao-portifolio2 {
-    margin-right: 5%;
     color: #fafafa;
 }
 
@@ -177,12 +185,12 @@ a:hover {
 }
 
 #text h1 {
-    font-size: 25px;
+    font-size: 1.563rem;
     margin-bottom: 1%;
 }
 
 #text p {
-    font-size: 30px;
+    font-size: 1.875rem;
 }
 
 #link-redes {
@@ -204,15 +212,15 @@ a:hover {
     margin: 0 auto;
     top: 50vh;
     font-family: monospace;
-    font-size: 20px;
+    font-size: 1.25rem;
     border-radius: 10px;
-    width: 250px;
-    height: 50px;
-    line-height: 50px;
+    width: 15.625rem;
+    height: 3.125rem;
+    line-height: 3.125rem;
     text-align: center;
     cursor: pointer;
     border: 2px solid #b0a6bd;
-    animation: pulse 2.5s infinite;
+    animation: pulse 3s infinite;
 
 
 }
@@ -230,32 +238,49 @@ a:hover {
 #container-potifolio {
     display: flex;
     flex-wrap: wrap;
+    gap: 3rem;
     justify-content: space-around;
     align-content: space-around;
     margin: 0 auto;
-    height: 150vh;
-    width: 50%;
+    min-height: 100vh;
+    width: 60vw;
+}
+
+#hiv-card {
+    h1 {
+        background: linear-gradient(to right bottom,
+                #f8e584,
+                #b85e00);
+        background-clip: text;
+        color: transparent;
+    }
 }
 
 #hiv-text {
     h2 {
+        background: linear-gradient(to right bottom,
+                #f3cf33,
+                #b85e00);
+        background-clip: text;
+        color: transparent;
+
         justify-self: center;
-        font-size: 50px;
+        font-size: 3.125rem;
     }
 
     iframe {
         max-width: 50%;
         max-width: 50%;
-        height: 400px;
-        width: 500px
+        height: 25rem;
+        width: 31.25rem
     }
 
     p {
-        margin-top: 7px;
-        margin-right: 7px;
-        margin-left: 7px;
+        margin-top: 0.438rem;
+        margin-right: 0.438rem;
+        margin-left: 0.438rem;
         text-align: justify;
-        font-size: 20px
+        font-size: 1.25rem
     }
 
 
@@ -269,26 +294,16 @@ a:hover {
 
     50% {
         @include transform(scale(1));
-        box-shadow: 0 0 0 0 #b0a6bd;
+        box-shadow: 0 0 0 0;
     }
 
     70% {
         @include transform(scale(1.1));
-        box-shadow: 0 0 15px 5px #704ba0;
+        box-shadow: 0 0 15px 5px #44009c;
     }
 
     100% {
         @include transform(scale(.9));
         box-shadow: 0 0 0 0 #44009c;
-    }
-}
-
-@keyframes highlight {
-    0% {
-        background: #704ba0
-    }
-
-    100% {
-        background: none;
     }
 }
