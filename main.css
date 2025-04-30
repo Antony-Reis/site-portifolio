@@ -7,6 +7,7 @@
 
 html {
     height: 100%;
+    overflow-y: scroll;
 }
 
 a {
@@ -19,12 +20,15 @@ a {
 }
 
 body {
+    background: linear-gradient(-45deg,
+            #111111, #090014, #100024, #090014,
+            #111111);
+    background-size: 400% 400%;
     height: 100vh;
-    width: 100vw;
-    background-color: #111111;
+    width: 100%;
     color: #fafafa;
     animation: fadein 1.75s;
-
+    animation: gradient ease 15s infinite;
 }
 
 
@@ -124,26 +128,27 @@ a:hover {
 
 #cabecalho {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     margin: 0 auto;
     width: 50%;
     height: 6.875rem;
+    gap: 3.5vw;
 }
 
 #logo {
     width: 5rem;
     height: 5rem;
-    object-fit: contain;
+    margin-right: auto;
+    /* empurra todo o resto para a direita */
+
 }
 
 #botao-home {
-    margin-left: 30vw;
     color: #fafafa;
 }
 
 #botao-home2 {
-    margin-left: 30vw;
     color: #777777;
 }
 
@@ -173,7 +178,6 @@ a:hover {
     top: 20vh;
     margin: 0 auto;
     font-family: monospace;
-    border-right: 3px solid #704ba0;
     border-bottom: 3px solid #704ba0;
     border-top-right-radius: 3px;
     border-bottom-left-radius: 3px;
@@ -195,15 +199,15 @@ a:hover {
 
 #link-redes {
     margin: 0 auto;
+    text-align: end;
     position: relative;
-    top: 20.5vh;
+    top: 20vh;
     width: 50%;
 
     img {
-        margin: auto 0;
-        margin-right: 0.75%;
-        width: 25px;
-        height: 25px;
+        margin-left: 5px;
+        width: 1.563rem;
+        height: 1.563rem;
     }
 }
 
@@ -305,5 +309,79 @@ a:hover {
     100% {
         @include transform(scale(.9));
         box-shadow: 0 0 0 0 #44009c;
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@media (max-width: 550px) {
+body{
+    height: 100vh;
+    width: 100vw;
+}
+    #cabecalho {
+
+        width: 90% !important;
+        height: 4.5rem !important;
+        .botao-cabecalho {
+            font-size: 80% !important;
+        }
+
+        #logo {
+            width: 3.5rem;
+            height: 3.5rem;
+        }
+    }
+
+    #text {
+        width: 90% !important;
+        border-bottom: 1px solid #704ba0;
+        position: relative;
+        top: 15vh;
+
+        h1 {
+            font-size: 100% !important;
+        }
+
+        p {
+            font-size: 115% !important;
+        }
+
+    }
+
+    #link-redes {
+        width: 90% !important;
+        position: relative;
+        top: 15.1vh !important;
+        img {
+            width: 0.9rem;
+            height: 0.9rem;
+        }
+
+    }
+
+    #botao-curriculo {
+        position: relative;
+        margin: 0 auto;
+        top: 40vh;
+        font-size: 0.63rem !important;
+        width: 7rem;
+        height: 1.5rem;
+        line-height: 1.5rem;
+        border: 1px solid #b0a6bd;
+        animation: pulse 1.5s infinite;
+        border-radius: 5px;
     }
 }
