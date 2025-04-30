@@ -51,16 +51,17 @@ a:hover {
 
 
 .portifolio-cards {
-    animation: pulse 3s initial;
+    aspect-ratio: 1/1;
+    margin: 0;
     display: flex;
+    margin-top: auto;
     flex-direction: column;
-    width: 22.5rem;
-    height: 22.5rem;
-    border-radius: 75px;
+    width: 60%;
+    border-radius: 25%;
     border: solid 2px #704ba0;
     border-top: solid 1px #704ba0;
     border-left: solid 1px #704ba0;
-    font-size: 1rem;
+    font-size: 1vw;
     background-color: #202020;
     align-items: center;
     justify-content: space-around;
@@ -75,6 +76,7 @@ a:hover {
 }
 
 .portifolio-cards:hover {
+
     position: relative;
     bottom: 1vh;
     border: #b0a6bd solid 2px;
@@ -83,12 +85,11 @@ a:hover {
 }
 
 .img-cards {
-    max-width: 15rem;
-    max-height: 15rem;
+    max-width: 50%;
+    max-height: 50%;
     width: auto;
     height: auto;
     margin: auto 0;
-    border-radius: 42.5px;
 
 }
 
@@ -101,7 +102,7 @@ a:hover {
     height: 80%;
     background: #191919;
     box-shadow: 0 0 2px 1px #b0a6bd;
-    border-radius: 50px;
+    border-radius: 5%;
     display: none;
     flex-direction: column;
     justify-content: space-around;
@@ -240,13 +241,14 @@ a:hover {
 }
 
 #container-potifolio {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 3rem;
-    justify-content: space-around;
-    align-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;  /* centra horizontalmente cada card na sua célula */
+    align-items:   center;  /* centra verticalmente cada card na sua célula */
     margin: 0 auto;
-    min-height: 100vh;
+    margin-top: 1vh;
+    min-height: 80vh;
     width: 60vw;
 }
 
@@ -284,7 +286,7 @@ a:hover {
         margin-right: 0.438rem;
         margin-left: 0.438rem;
         text-align: justify;
-        font-size: 1.25rem
+        font-size: clamp(0.438rem, 2vw + 0.438rem, 1rem);
     }
 
 
@@ -326,15 +328,17 @@ a:hover {
     }
 }
 
-@media (max-width: 550px) {
-body{
-    height: 100vh;
-    width: 100vw;
-}
+@media (max-width: 800px) {
+    body {
+        height: 100vh;
+        width: 100vw;
+    }
+
     #cabecalho {
 
         width: 90% !important;
         height: 4.5rem !important;
+
         .botao-cabecalho {
             font-size: 80% !important;
         }
@@ -365,6 +369,7 @@ body{
         width: 90% !important;
         position: relative;
         top: 15.1vh !important;
+
         img {
             width: 0.9rem;
             height: 0.9rem;
@@ -384,4 +389,101 @@ body{
         animation: pulse 1.5s infinite;
         border-radius: 5px;
     }
+
+
+
+}
+
+@media (max-width: 1060px) {
+    body {
+        height: 100vh;
+    }
+
+    #container-potifolio {
+        width: 90% !important;
+
+    }
+
+    .portifolio-cards {
+        border: solid 1px #704ba0;
+        background-color: #202020;
+        font-size: 1.3vw;
+        align-items: center;
+        justify-content: space-evenly;
+        text-align: center;
+        opacity: 100% !important;
+    }
+
+    .img-cards {
+        width: auto;
+        height: auto;
+    }
+
+
+
+    #cabecalho {
+
+        width: 90% !important;
+        height: 4.5rem !important;
+
+        .botao-cabecalho {
+            font-size: 80% !important;
+        }
+
+        #logo {
+            width: 3.5rem;
+            height: 3.5rem;
+        }
+    }
+
+    .portifolio-texts {
+        font-family: monospace;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        height: 80%;
+        background: #191919;
+        box-shadow: 0 0 2px 1px #b0a6bd;
+        justify-content: space-around;
+        text-align: center;
+
+
+
+    }
+
+    #hiv-text {
+        h2 {
+            justify-self: center;
+            font-size: 200%;
+        }
+
+        iframe {
+            max-height: 20%;
+            max-width: 80%;
+        }
+
+        p {
+            max-width: 90%;
+            max-height: 90%;
+            margin-top: 0.438rem;
+            margin-right: 0.438rem;
+            margin-left: 0.438rem;
+            text-align: justify;
+            
+        }
+
+
+    }
+    .close {
+        position: fixed;
+        top: 0;
+        right: 1%;
+        font-size:2rem;
+        cursor: pointer;
+    
+    
+    }
+
 }
