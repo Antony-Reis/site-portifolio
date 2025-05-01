@@ -8,6 +8,7 @@
 html {
     height: 100%;
     overflow-y: scroll;
+    font-family: monospace;
 }
 
 a {
@@ -15,12 +16,14 @@ a {
     background: linear-gradient(to right,
             #b0a6bd,
             #704ba0);
+    background-size: 400%;
+    animation: gradient ease 5s infinite;
     background-clip: text;
     color: transparent;
 }
 
 body {
-    background: linear-gradient(-45deg,
+    background: linear-gradient(135deg,
             #111111, #090014, #100024, #090014,
             #111111);
     background-size: 400% 400%;
@@ -43,31 +46,53 @@ a:hover {
     background: linear-gradient(to left,
             #b0a6bd,
             #704ba0);
+    animation: none ;
     background-clip: text;
     color: transparent;
 
 
 }
 
+.octagon-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* deixa clicar no conteúdo sem problemas */
+    z-index: 1;
+    /* fica acima do fundo, abaixo do conteúdo se quiser */
+}
 
 .portifolio-cards {
+    clip-path: polygon(15% 0%, 85% 0%,
+            100% 15%, 100% 85%,
+            85% 100%, 15% 100%,
+            0% 85%, 0% 15%);
+    -webkit-clip-path: polygon(15% 0%, 85% 0%, 100% 15%, 100% 85%,
+            85% 100%, 15% 100%, 0% 85%, 0% 15%);
     aspect-ratio: 1/1;
     margin: 0;
     display: flex;
     margin-top: auto;
     flex-direction: column;
     width: 60%;
-    border-radius: 25%;
-    border: solid 2px #704ba0;
-    border-top: solid 1px #704ba0;
-    border-left: solid 1px #704ba0;
-    font-size: 1vw;
-    background-color: #202020;
+    font-size: 1vh;
+    background-color: #222222;
     align-items: center;
     justify-content: space-around;
     text-align: center;
     opacity: 85%;
 }
+
+
+.portifolio-cards:hover .octagon-frame polygon {
+    stroke: #704ba0;
+    stroke-width: 2px;
+    /* cor quando o mouse passar */
+}
+
 
 .title-card {
     width: 60%;
@@ -79,7 +104,7 @@ a:hover {
 
     position: relative;
     bottom: 1vh;
-    border: #b0a6bd solid 2px;
+
     opacity: 100%;
     cursor: pointer;
 }
@@ -94,20 +119,33 @@ a:hover {
 }
 
 .portifolio-texts {
-    font-family: monospace;
-    position: fixed;
-    top: 10%;
-    left: 25%;
-    width: 50%;
-    height: 80%;
-    background: #191919;
-    box-shadow: 0 0 2px 1px #b0a6bd;
-    border-radius: 5%;
+    /* 1. Shrink-wrap */
     display: none;
     flex-direction: column;
     justify-content: space-around;
-    text-align: center;
+    align-items: center;
 
+    /* 2. Sem width/height fixos */
+    width: auto;
+    height: auto;
+
+    /* 3. Limites para não ultrapassar a tela */
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow: auto;
+
+    /* 4. Centralização real */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* Estilos visuais */
+    padding: 2em;
+    background: #191919;
+    box-shadow: 0 0 2px 1px #b0a6bd;
+    border-radius: 5%;
+    text-align: center;
 
 
 }
@@ -180,6 +218,7 @@ a:hover {
     margin: 0 auto;
     font-family: monospace;
     border-bottom: 3px solid #704ba0;
+    border-right: 3px solid #704ba0;
     border-top-right-radius: 3px;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 1px;
@@ -206,7 +245,7 @@ a:hover {
     width: 50%;
 
     img {
-        margin-left: 5px;
+        margin-left: 0.3vw;
         width: 1.563rem;
         height: 1.563rem;
     }
@@ -242,10 +281,12 @@ a:hover {
 
 #container-potifolio {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    justify-items: center;  /* centra horizontalmente cada card na sua célula */
-    align-items:   center;  /* centra verticalmente cada card na sua célula */
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+    justify-items: center;
+    /* centra horizontalmente cada card na sua célula */
+    align-items: center;
+    /* centra verticalmente cada card na sua célula */
     margin: 0 auto;
     margin-top: 1vh;
     min-height: 80vh;
@@ -286,7 +327,7 @@ a:hover {
         margin-right: 0.438rem;
         margin-left: 0.438rem;
         text-align: justify;
-        font-size: clamp(0.438rem, 2vw + 0.438rem, 1rem);
+        font-size: 1vw;
     }
 
 
@@ -330,6 +371,7 @@ a:hover {
 
 @media (max-width: 800px) {
     body {
+        animation: gradient ease 10s infinite;
         height: 100vh;
         width: 100vw;
     }
@@ -352,6 +394,7 @@ a:hover {
     #text {
         width: 90% !important;
         border-bottom: 1px solid #704ba0;
+        border-right: 1px solid #704ba0;
         position: relative;
         top: 15vh;
 
@@ -405,7 +448,6 @@ a:hover {
     }
 
     .portifolio-cards {
-        border: solid 1px #704ba0;
         background-color: #202020;
         font-size: 1.3vw;
         align-items: center;
@@ -436,54 +478,38 @@ a:hover {
         }
     }
 
-    .portifolio-texts {
-        font-family: monospace;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 90%;
-        height: 80%;
-        background: #191919;
-        box-shadow: 0 0 2px 1px #b0a6bd;
-        justify-content: space-around;
-        text-align: center;
-
-
-
-    }
 
     #hiv-text {
+        align-content: center;
+        align-items: stretch;
+
         h2 {
-            justify-self: center;
             font-size: 200%;
         }
 
         iframe {
-            max-height: 20%;
-            max-width: 80%;
+            max-height: 20vh;
+            max-width: 60vw;
         }
 
         p {
-            max-width: 90%;
-            max-height: 90%;
-            margin-top: 0.438rem;
-            margin-right: 0.438rem;
-            margin-left: 0.438rem;
+
+            margin: 0 auto;
             text-align: justify;
-            
+            font-size: clamp(0.438rem, 3.2vw, 1rem);
         }
 
 
     }
+
     .close {
         position: fixed;
         top: 0;
         right: 1%;
-        font-size:2rem;
+        font-size: 2rem;
         cursor: pointer;
-    
-    
+
+
     }
 
 }
