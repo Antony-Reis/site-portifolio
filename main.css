@@ -75,7 +75,7 @@ a:hover {
     display: flex;
     margin-top: auto;
     flex-direction: column;
-    width: 60%;
+    width: 17.5vw;
     font-size: 1vw;
     background-color: #222222;
     align-items: center;
@@ -347,7 +347,7 @@ a:hover {
 
 #site-card h1 {
     background: linear-gradient(to bottom,
-            #d15b2a 32%,#4a97d4);
+            #d15b2a 32%, #4a97d4);
     background-clip: text;
     color: transparent;
 }
@@ -487,11 +487,6 @@ a:hover {
         border-radius: 5px;
     }
 
-
-
-}
-
-@media (max-width: 1060px) {
     body {
         height: 100vh;
     }
@@ -504,6 +499,9 @@ a:hover {
     .portifolio-cards {
         background-color: #202020;
         font-size: 1.3vw;
+        aspect-ratio: 1/1;
+        width: 40vw;
+
         align-items: center;
         justify-content: space-evenly;
         text-align: center;
