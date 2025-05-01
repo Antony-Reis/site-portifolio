@@ -240,6 +240,7 @@ a:hover {
 
 #link-redes {
     margin: 0 auto;
+    margin-top: 0.5rem;
     text-align: end;
     position: relative;
     top: 20vh;
@@ -269,7 +270,7 @@ a:hover {
     text-align: center;
     cursor: pointer;
     border: 2px solid #b0a6bd;
-    animation: pulse ease 3s infinite;
+    animation: pulse ease-out 3s infinite;
 
 
 }
@@ -407,6 +408,10 @@ a:hover {
         width: 100vw;
     }
 
+    .botao-cabecalho{
+        margin-left: 3rem;
+    }
+
     #text {
         width: 90% !important;
         border-bottom: 1px solid #704ba0;
@@ -414,6 +419,12 @@ a:hover {
         position: relative;
         top: 15vh;
     }
+
+    #text h1 {
+        font-size: 125%;
+    }
+
+    #text p {font-size: 125%;}
 
 
 
@@ -467,7 +478,7 @@ a:hover {
         justify-content: space-evenly;
         text-align: center;
         opacity: 100% !important;
-        animation: moving-cellphone infinite;
+        animation: moving-cellphone linear infinite;
         animation-duration: 5s;
 
     }
