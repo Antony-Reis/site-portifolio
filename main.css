@@ -30,8 +30,7 @@ body {
     height: 100vh;
     width: 100%;
     color: #fafafa;
-    animation: fadein 1.75s;
-    animation: gradient ease 60s infinite;
+    animation: fadein 1.5s, gradient ease 60s infinite;
 }
 
 
@@ -77,13 +76,16 @@ a:hover {
     margin-top: auto;
     flex-direction: column;
     width: 60%;
-    font-size: 1vh;
+    font-size: 1vw;
     background-color: #222222;
     align-items: center;
     justify-content: space-around;
     text-align: center;
     opacity: 85%;
+    animation: fadein 2s;
 }
+
+
 
 
 .portifolio-cards:hover .octagon-frame polygon {
@@ -124,6 +126,8 @@ a:hover {
     justify-content: space-around;
     align-items: center;
 
+
+
     /* 2. Sem width/height fixos */
     width: auto;
     height: auto;
@@ -151,6 +155,27 @@ a:hover {
 
 }
 
+.portifolio-texts h2 {
+    justify-self: center;
+    font-size: 3.125rem;
+}
+
+.portifolio-texts iframe {
+    max-width: 50%;
+    max-width: 50%;
+    height: 25rem;
+    width: 31.25rem
+}
+
+.portifolio-texts p {
+    margin-top: 0.438rem;
+    margin-right: 0.438rem;
+    margin-left: 0.438rem;
+    text-align: justify;
+    font-size: 1vw;
+}
+
+
 .close {
     position: absolute;
     top: 0.625rem;
@@ -159,11 +184,14 @@ a:hover {
     cursor: pointer;
 
 
+
 }
 
 .close:hover {
     color: #b0a6bd;
 }
+
+
 
 
 #cabecalho {
@@ -219,7 +247,6 @@ a:hover {
     margin: 0 auto;
     font-family: monospace;
     border-bottom: 3px solid #704ba0;
-    border-right: 3px solid #704ba0;
     border-top-right-radius: 3px;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 1px;
@@ -314,24 +341,23 @@ a:hover {
             #b85e00);
     background-clip: text;
     color: transparent;
-
-    justify-self: center;
-    font-size: 3.125rem;
 }
 
-#hiv-text iframe {
-    max-width: 50%;
-    max-width: 50%;
-    height: 25rem;
-    width: 31.25rem
+
+
+#site-card h1 {
+    background: linear-gradient(to bottom,
+            #d15b2a 32%,#4a97d4);
+    background-clip: text;
+    color: transparent;
 }
 
-#hiv-text p {
-    margin-top: 0.438rem;
-    margin-right: 0.438rem;
-    margin-left: 0.438rem;
-    text-align: justify;
-    font-size: 1vw;
+#site_text h2 {
+    background: linear-gradient(to right,
+            #c14725 10%, #285ea7 30%, #fed93d);
+    background-clip: text;
+    color: transparent;
+
 }
 
 
@@ -401,6 +427,8 @@ a:hover {
     }
 }
 
+
+
 @media (max-width: 800px) {
     body {
         animation: gradient ease 30s infinite;
@@ -408,7 +436,7 @@ a:hover {
         width: 100vw;
     }
 
-    .botao-cabecalho{
+    .botao-cabecalho {
         margin-left: 3rem;
     }
 
@@ -424,7 +452,9 @@ a:hover {
         font-size: 125%;
     }
 
-    #text p {font-size: 125%;}
+    #text p {
+        font-size: 125%;
+    }
 
 
 
@@ -504,21 +534,21 @@ a:hover {
 
 
 
-    #hiv-text {
+    .portifolio-texts {
         align-content: center;
         align-items: stretch;
     }
 
-    #hiv-text h2 {
+    .portifolio-texts h2 {
         font-size: 200%;
     }
 
-    #hiv-text iframe {
+    .portifolio-texts iframe {
         max-height: 20vh;
         max-width: 60vw;
     }
 
-    #hiv-text p {
+    .portifolio-texts p {
 
         margin: 0 auto;
         text-align: justify;

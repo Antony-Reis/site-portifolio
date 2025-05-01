@@ -1,21 +1,27 @@
-// Referências aos elementos HTML
-var openModal_hiv = document.getElementById("hiv-card");
+// 1. Referências aos cards
+const cardHIV  = document.getElementById('hiv-card');
+const cardSite = document.getElementById('site-card');
 
+// 2. Referências aos modais
+const modalHIV  = document.getElementById('hiv-text');
+const modalSite = document.getElementById('site_text');
 
-
-var modal = document.querySelector('.portifolio-texts');
-var closeBtn = document.querySelector('.close');
-
-
-// Quando o usuário clica no card, abre o modal
-openModal_hiv.addEventListener('click', function () {
-  document.getElementById("hiv-text").style.display = 'block'
-  modal.style.display = 'inline-flex';  // mostra o modal
+// 3. Abrir modais ao clicar nos cards
+cardHIV.addEventListener('click', () => {
+  modalHIV.style.display = 'inline-flex';
+});
+cardSite.addEventListener('click', () => {
+  modalSite.style.display = 'inline-flex';
 });
 
-// Quando o usuário clica no botão de fechar (X), fecha o modal
-closeBtn.addEventListener('click', function () {
-  modal.style.display = 'none';   // esconde o modal
-});
+// 4. Função para fechar um modal
+function attachClose(modalEl) {
+  const btn = modalEl.querySelector('.close');
+  btn.addEventListener('click', () => {
+    modalEl.style.display = 'none';
+  });
+}
 
-
+// 5. Vincula o fechamento em cada modal
+attachClose(modalHIV);
+attachClose(modalSite);
