@@ -36,8 +36,7 @@ body {
 
 
 .botao-cabecalho {
-    background-color: transparent;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: monospace;
     font-size: 1.2rem;
 
 }
@@ -46,7 +45,7 @@ a:hover {
     background: linear-gradient(to left,
             #b0a6bd,
             #704ba0);
-    animation: none ;
+    animation: none;
     background-clip: text;
     color: transparent;
 
@@ -145,6 +144,8 @@ a:hover {
     background: #191919;
     box-shadow: 0 0 2px 1px #b0a6bd;
     border-radius: 5%;
+    border-top-right-radius: 0%;
+    border-bottom-left-radius: 0%;
     text-align: center;
 
 
@@ -244,11 +245,15 @@ a:hover {
     top: 20vh;
     width: 50%;
 
-    img {
-        margin-left: 0.3vw;
-        width: 1.563rem;
-        height: 1.563rem;
-    }
+
+}
+
+#link-redes img {
+
+    margin-left: 0.3vw;
+    width: 1.563rem;
+    height: 1.563rem;
+
 }
 
 #botao-curriculo {
@@ -256,15 +261,15 @@ a:hover {
     margin: 0 auto;
     top: 50vh;
     font-family: monospace;
-    font-size: 1.25rem;
+    font-size: 2rem;
     border-radius: 10px;
-    width: 15.625rem;
-    height: 3.125rem;
-    line-height: 3.125rem;
+    width: 20rem;
+    height: 5rem;
+    line-height: 5rem;
     text-align: center;
     cursor: pointer;
     border: 2px solid #b0a6bd;
-    animation: pulse 3s infinite;
+    animation: pulse ease 3s infinite;
 
 
 }
@@ -293,67 +298,93 @@ a:hover {
     width: 60vw;
 }
 
-#hiv-card {
-    h1 {
-        background: linear-gradient(to right bottom,
-                #f8e584,
-                #b85e00);
-        background-clip: text;
-        color: transparent;
-    }
+#hiv-card h1 {
+    background: linear-gradient(to right bottom,
+            #f8e584,
+            #b85e00);
+    background-clip: text;
+    color: transparent;
 }
 
-#hiv-text {
-    h2 {
-        background: linear-gradient(to right bottom,
-                #f3cf33,
-                #b85e00);
-        background-clip: text;
-        color: transparent;
 
-        justify-self: center;
-        font-size: 3.125rem;
-    }
+#hiv-text h2 {
+    background: linear-gradient(to right bottom,
+            #f3cf33,
+            #b85e00);
+    background-clip: text;
+    color: transparent;
 
-    iframe {
-        max-width: 50%;
-        max-width: 50%;
-        height: 25rem;
-        width: 31.25rem
-    }
-
-    p {
-        margin-top: 0.438rem;
-        margin-right: 0.438rem;
-        margin-left: 0.438rem;
-        text-align: justify;
-        font-size: 1vw;
-    }
-
-
+    justify-self: center;
+    font-size: 3.125rem;
 }
+
+#hiv-text iframe {
+    max-width: 50%;
+    max-width: 50%;
+    height: 25rem;
+    width: 31.25rem
+}
+
+#hiv-text p {
+    margin-top: 0.438rem;
+    margin-right: 0.438rem;
+    margin-left: 0.438rem;
+    text-align: justify;
+    font-size: 1vw;
+}
+
+
+
 
 
 @keyframes pulse {
-    0% {
-        @include transform(scale(.9));
-    }
+    0% {}
 
     50% {
-        @include transform(scale(1));
+
         box-shadow: 0 0 0 0;
     }
 
     70% {
-        @include transform(scale(1.1));
+
         box-shadow: 0 0 15px 5px #44009c;
     }
 
     100% {
-        @include transform(scale(.9));
+
         box-shadow: 0 0 0 0 #44009c;
     }
 }
+
+@keyframes moving-cellphone {
+    0% {
+        border-radius: 0%;
+    }
+
+    20% {
+        border-radius: 10%;
+    }
+
+    40% {
+
+        border-radius: 20%;
+    }
+
+    60% {
+
+        border-radius: 30%;
+    }
+
+    80% {
+
+        border-radius: 20%;
+    }
+
+    100% {
+        border-radius: 10%;
+    }
+}
+
 
 @keyframes gradient {
     0% {
@@ -371,24 +402,9 @@ a:hover {
 
 @media (max-width: 800px) {
     body {
-        animation: gradient ease 29s infinite;
+        animation: gradient ease 30s infinite;
         height: 100vh;
         width: 100vw;
-    }
-
-    #cabecalho {
-
-        width: 90% !important;
-        height: 4.5rem !important;
-
-        .botao-cabecalho {
-            font-size: 80% !important;
-        }
-
-        #logo {
-            width: 3.5rem;
-            height: 3.5rem;
-        }
     }
 
     #text {
@@ -397,38 +413,34 @@ a:hover {
         border-right: 1px solid #704ba0;
         position: relative;
         top: 15vh;
-
-        h1 {
-            font-size: 100% !important;
-        }
-
-        p {
-            font-size: 115% !important;
-        }
-
     }
+
+
+
+
 
     #link-redes {
         width: 90% !important;
         position: relative;
         top: 15.1vh !important;
-
-        img{
-            margin-left: 10vw;
-        }
-
-
-
     }
+
+    #link-redes img {
+        margin-left: 10vw;
+    }
+
+
+
+
 
     #botao-curriculo {
         position: relative;
         margin: 0 auto;
         top: 40vh;
-        font-size: 0.63rem !important;
-        width: 7rem;
-        height: 1.5rem;
-        line-height: 1.5rem;
+        font-size: 1rem !important;
+        width: 12rem;
+        height: 4rem;
+        line-height: 4rem;
         border: 1px solid #b0a6bd;
         animation: pulse 2s infinite;
         border-radius: 5px;
@@ -455,6 +467,9 @@ a:hover {
         justify-content: space-evenly;
         text-align: center;
         opacity: 100% !important;
+        animation: moving-cellphone infinite;
+        animation-duration: 5s;
+
     }
 
     .img-cards {
@@ -468,40 +483,39 @@ a:hover {
 
         width: 90% !important;
         height: 4.5rem !important;
-
-        .botao-cabecalho {
-            font-size: 80% !important;
-        }
-
-        #logo {
-            width: 3.5rem;
-            height: 3.5rem;
-        }
     }
+
+
+    #logo {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
 
 
     #hiv-text {
         align-content: center;
         align-items: stretch;
-
-        h2 {
-            font-size: 200%;
-        }
-
-        iframe {
-            max-height: 20vh;
-            max-width: 60vw;
-        }
-
-        p {
-
-            margin: 0 auto;
-            text-align: justify;
-            font-size: clamp(0.438rem, 3.2vw, 1rem);
-        }
-
-
     }
+
+    #hiv-text h2 {
+        font-size: 200%;
+    }
+
+    #hiv-text iframe {
+        max-height: 20vh;
+        max-width: 60vw;
+    }
+
+    #hiv-text p {
+
+        margin: 0 auto;
+        text-align: justify;
+        font-size: clamp(0.438rem, 3.2vw, 1rem);
+    }
+
+
+
 
     .close {
         position: fixed;
