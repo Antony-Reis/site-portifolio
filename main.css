@@ -76,7 +76,7 @@ a:hover {
     margin-top: auto;
     flex-direction: column;
     width: 17.5vw;
-    font-size: 1vw;
+    font-size: 0.8vw;
     background-color: #222222;
     align-items: center;
     justify-content: space-around;
@@ -247,6 +247,7 @@ a:hover {
     margin: 0 auto;
     font-family: monospace;
     border-bottom: 3px solid #704ba0;
+    border-right: 3px solid #704ba0;
     border-top-right-radius: 3px;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 1px;
