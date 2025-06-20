@@ -102,7 +102,7 @@ a:hover {
 }
 
 .portfolio-cards:hover {
-
+transition: 1s;
     position: relative;
     bottom: 1vh;
 
@@ -359,6 +359,20 @@ a:hover {
     background-clip: text;
     color: transparent;
 
+}
+
+#flask-card h1{
+    background: linear-gradient(to bottom,
+            white 60%, #704ba0);
+    background-clip: text;
+    color: transparent;
+}
+
+#flask-text h2{
+    background: linear-gradient(to right,
+            white 20%, #704ba0);
+    background-clip: text;
+    color: transparent;
 }
 
 
