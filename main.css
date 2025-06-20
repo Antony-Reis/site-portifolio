@@ -11,6 +11,10 @@ html {
     font-family: monospace;
 }
 
+video {
+    background: transparent;
+}
+
 a {
     text-decoration: none;
     background: linear-gradient(to right,
@@ -102,7 +106,7 @@ a:hover {
 }
 
 .portfolio-cards:hover {
-transition: 1s;
+    transition: 1s;
     position: relative;
     bottom: 1vh;
 
@@ -361,14 +365,14 @@ transition: 1s;
 
 }
 
-#flask-card h1{
+#flask-card h1 {
     background: linear-gradient(to bottom,
             white 60%, #704ba0);
     background-clip: text;
     color: transparent;
 }
 
-#flask-text h2{
+#flask-text h2 {
     background: linear-gradient(to right,
             white 20%, #704ba0);
     background-clip: text;
@@ -446,10 +450,10 @@ transition: 1s;
 
 @media (max-width: 800px) {
     body {
-            background: linear-gradient(-45deg,
-            #111111, #0b0018, #13002a, #0b0018,
-            #111111);
-                background-size: 400%;
+        background: linear-gradient(-45deg,
+                #111111, #0b0018, #13002a, #0b0018,
+                #111111);
+        background-size: 400%;
         animation: gradient ease 10s infinite;
         height: 100dvh;
         width: 100vw;
