@@ -30,7 +30,7 @@ body {
     height: 100vh;
     width: 100%;
     color: #fafafa;
-    animation: fadein 1.5s, gradient ease 60s infinite;
+    animation: fadein 1.5s, gradient ease 30s infinite;
 }
 
 
@@ -446,8 +446,12 @@ transition: 1s;
 
 @media (max-width: 800px) {
     body {
-        animation: gradient ease 30s infinite;
-        height: 100vh;
+            background: linear-gradient(-45deg,
+            #111111, #0b0018, #13002a, #0b0018,
+            #111111);
+                background-size: 400%;
+        animation: gradient ease 10s infinite;
+        height: 100dvh;
         width: 100vw;
     }
 
