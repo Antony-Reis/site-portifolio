@@ -13,6 +13,7 @@ html {
 
 video {
     background: transparent;
+    align-self: center;
 }
 
 a {
@@ -164,7 +165,7 @@ a:hover {
     font-size: 3.125rem;
 }
 
-.portfolio-texts iframe {
+.portfolio-texts video {
     max-width: 50%;
     max-width: 50%;
     height: 25rem;
@@ -542,7 +543,6 @@ a:hover {
 
 
     #cabecalho {
-
         width: 90% !important;
         height: 4.5rem !important;
     }
@@ -556,7 +556,7 @@ a:hover {
 
 
     .portfolio-texts {
-        align-content: center;
+        width: 95%;
         align-items: stretch;
     }
 
@@ -564,13 +564,13 @@ a:hover {
         font-size: 200%;
     }
 
-    .portfolio-texts iframe {
+    .portfolio-texts video {
+        align-self: center;
         max-height: 20vh;
         max-width: 60vw;
     }
 
     .portfolio-texts p {
-
         margin: 0 auto;
         text-align: justify;
         font-size: clamp(0.438rem, 3.2vw, 1rem);
@@ -585,8 +585,6 @@ a:hover {
         right: 1%;
         font-size: 2rem;
         cursor: pointer;
-
-
     }
 
 }
